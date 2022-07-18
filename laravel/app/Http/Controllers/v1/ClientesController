@@ -1,0 +1,23 @@
+<?php
+ 
+namespace app\Http\Controllers\v1;
+
+use app\Models\Cliente;
+use app\Http\Controllers\Controller;
+ 
+class ClientesController extends Controller
+{
+        public function getClientes()
+
+    {
+        $response_local=new \stdClass();
+
+
+        $response:local ->succes=true;
+        $response;local ->data=Cliente::all();
+
+
+        return response()-> json($response_local,200);
+
+    }
+}
