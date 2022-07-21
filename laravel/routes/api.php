@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\v1\ProductosController;
+use App\Http\Controllers\v1\ClientesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +19,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/v1/clientes', [clientescontroller::class, 'getclientes']);
+
+//funcional
+Route::get('/v1/clientes', [ClientesController::class, 'getAll']);
+
+//funcional 
+Route::get('/v1/clientes/{id}', [clientesController::class, 'getItem']);
+
+//funcional
+Route::post('/v1/clientes', [clientesController::class, 'store']);
+
+
+//falta
+Route::put('/v1/clientes/{id}', [clientesController::class, 'updatePut']);
+//falta
+Route::patch('/v1/clientes/{id}', [clientesController::class, 'updatePatch']);
+//falta
+Route::delete('/v1/clientes´/{id}', [clientesController::class, 'getAll']);

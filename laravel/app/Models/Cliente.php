@@ -1,9 +1,10 @@
 <?php
  
-namespace app\Models;
- 
+namespace App\Models;
+
+use BinaryCabin\LaravelUUID\Traits\HasUUID; 
 use Illuminate\Database\Eloquent\Model;
-use BinaryCabin\LaravelUUID\Traits\HasUUID;
+
  
 class cliente extends Model
 {
