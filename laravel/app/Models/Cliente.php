@@ -5,7 +5,7 @@ namespace app\Models;
 use Illuminate\Database\Eloquent\Model;
 use BinaryCabin\LaravelUUID\Traits\HasUUID;
  
-class Producto extends Model
+class Cliente extends Model
 {
     use HasUUID;
   
