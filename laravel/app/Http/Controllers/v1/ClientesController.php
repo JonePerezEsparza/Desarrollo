@@ -69,8 +69,11 @@ class ClientesController extends Controller
 
       if($request->codigo)  
         $cliente->codigo = $reques->codigo;
+      if
       $cliente->nombre=$request->nombre;
+      if
       $cliente->descripcion=$request->descripcion;
+    
       $cliente->save();
 
       $response->succes=true;
