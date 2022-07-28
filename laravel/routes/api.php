@@ -29,10 +29,9 @@ Route::get('/v1/clientes/{id}', [clientesController::class, 'getItem']);
 //funcional
 Route::post('/v1/clientes', [clientesController::class, 'store']);
 
-
-//falta
+//funcional
 Route::put('/v1/clientes/{id}', [clientesController::class, 'updatePut']);
-//falta
-Route::patch('/v1/clientes/{id}', [clientesController::class, 'updatePatch']);
-//falta
-Route::delete('/v1/clientes´/{id}', [clientesController::class, 'getAll']);
+//funcional
+Route::patch('/v1/clientes/{id}', [clientesController::class, 'updatepatch']);
+//funcional
+Route::delete('/v1/clientes´/{id}', [clientesController::class, 'delete']);
