@@ -11,6 +11,7 @@ class ClientesController extends Controller
 
     {
       $response = new \stdClass();
+
       $clientes = cliente::all();
 
       $response->success=true;
@@ -24,9 +25,8 @@ class ClientesController extends Controller
       $response = new \stdClass();
 
       $cliente = cliente::find($id);
+      $response->data=$cliente;
       $response->success=true;
-      $response->data=$categoria;
-
       return response()->json($response,200);
     }
 
@@ -36,22 +36,23 @@ class ClientesController extends Controller
       $response = new \stdClass ();
 
       $cliente = new cliente();
-
       $cliente->codigo=$request->codigo;
       $cliente->nombre=$request->nombre;
       $cliente->save();
 
-      $response->success=true;
       $response->data=$cliente;
+      $response->success=true;
 
       return response()->json($response,200);
     }
+
+
     public function updatePut(Request $resquest,$id)
     {
       $response = new \stdClass();
-      $cliente = cliente::find($id)
 
-      $cliente->codigo = $reques->codigo;
+      $cliente = cliente::find($id);
+      $cliente->codigo=$request->codigo;
       $cliente->nombre=$request->nombre;
       $cliente->descripcion=$request->descripcion;
       $cliente->save();
@@ -59,14 +60,14 @@ class ClientesController extends Controller
       $response->data=$cliente;
       $response->success=true;
       
-
-      return response()->json($response,200);
+       return response()->json($response,200);
 
     }
+
     public function updatePatch(Request $request,$id)
     {
       $response = new \stdClass();
-      $cliente = cliente::find($id)
+      $cliente = cliente::find($id);
 
       if($request->codigo!=null) 
       {
@@ -95,7 +96,7 @@ class ClientesController extends Controller
       $cliente = cliente::find($id);
       $cliente->delete();
 
-      $response->success=true
+      $response->success=true;
       return response()->json($response,200);
     }
 }

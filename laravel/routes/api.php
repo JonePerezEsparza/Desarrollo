@@ -34,4 +34,4 @@ Route::put('/v1/clientes/{id}', [clientesController::class, 'updatePut']);
 //funcional
 Route::patch('/v1/clientes/{id}', [clientesController::class, 'updatepatch']);
 //funcional
-Route::delete('/v1/clientes´/{id}', [clientesController::class, 'delete']);
+Route::delete('/v1/clientes/{id}', [clientesController::class, 'delete']);
