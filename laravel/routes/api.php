@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\v1\ClientesController;
+use App\Http\Controllers\v1\pacientesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,17 +21,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 //funcional
-Route::get('/v1/clientes', [ClientesController::class, 'getAll']);
+Route::get('/v1/pacientes', [pacientesController::class, 'getAll']);
 
 //funcional 
-Route::get('/v1/clientes/{id}', [clientesController::class, 'getItem']);
+Route::get('/v1/pacientes/{id_pc}', [pacientesController::class, 'getItem']);
 
 //funcional
-Route::post('/v1/clientes', [clientesController::class, 'store']);
+Route::post('/v1/pacientes/', [pacientesController::class, 'store']);
 
 //funcional
-Route::put('/v1/clientes/{id}', [clientesController::class, 'updatePut']);
+Route::put('/v1/pacientes/{id_pc}', [pacientesController::class, 'update']);
 //funcional
-Route::patch('/v1/clientes/{id}', [clientesController::class, 'updatepatch']);
+Route::patch('/v1/pacientes/{id_pc}', [pacientesController::class, 'patchUpdate']);
 //funcional
-Route::delete('/v1/clientes/{id}', [clientesController::class, 'delete']);
+Route::delete('/v1/pacientes/{id_pc}', [pacientesController::class, 'delete']);
